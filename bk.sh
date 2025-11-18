@@ -4,7 +4,7 @@ CONFIG_FILE="/usr/local/etc/xray/config.json"
 BACKEND_FILE="/tmp/xray_backend.txt"
 
 if [ ! -f "$BACKEND_FILE" ]; then
-    read -p "Qual seu backend? Ex: app1 " backend
+    read -p "Qual seu backend? (ex: app1): " backend
     [ -z "$backend" ] && exit 1
     echo "${backend#/}" | sed 's|/$||' > "$BACKEND_FILE"
 fi
